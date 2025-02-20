@@ -1,0 +1,10 @@
+PRD-(Product Requirements Document)
+
+1. Objective or purpose
+2. Scope
+3. Features & Requirements
+4. User Stories or use cases
+5. Technical Requirements
+6. Design Requirements
+7. Success Metrics
+8. Timeline

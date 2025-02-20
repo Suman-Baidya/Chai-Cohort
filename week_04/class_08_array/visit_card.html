@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGYCSP Visiting Card</title>
+    <style>
+        @page {
+            size: A3;
+            margin: 20px;
+        }
+        
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 90mm);
+            gap: 10mm;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .card {
+            width: 90mm;
+            height: 50mm;
+            background: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .card h2 {
+            margin: 5px 0;
+            color: #d32f2f;
+            font-size: 14px;
+        }
+
+        .card p {
+            margin: 3px 0;
+            font-size: 10px;
+            color: #333;
+        }
+
+        .card img {
+            width: 40px;
+            height: auto;
+            margin-bottom: 5px;
+        }
+
+        .print-btn {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #d32f2f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .print-btn:hover {
+            background: #b71c1c;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                background: none;
+            }
+            .card-container {
+                gap: 5mm;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid black;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">Print Visiting Cards</button>
+
+<div class="card-container" id="cardContainer"></div>
+
+<script>
+    // Visiting card details
+    const cardData = [
+        {
+            name: "RAJEEV GANDHI YOUTH COMPUTER SHIKSHA PARISHAD",
+            certification: "ISO 9001:2015 Certified",
+            govt: "Under N.C.T. Delhi Govt. of India",
+            address: "📍 Chandpara, Station Road, Near G.P Office, North 24 Parganas",
+            phone: "📞 9647602100, 9735357100",
+            email: "✉ info@rgycsp.org",
+            website: "🌐 rgycsp.in"
+        }
+    ];
+
+    function generateCards() {
+        const container = document.getElementById("cardContainer");
+
+        // Number of cards to print (adjustable)
+        const totalCards = 12;
+
+        for (let i = 0; i < totalCards; i++) {
+            let card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
+                <img src="logo.png" alt="RGYCSP Logo">
+                <h2>${cardData[0].name}</h2>
+                <p>${cardData[0].certification}</p>
+                <p>${cardData[0].govt}</p>
+                <p>${cardData[0].address}</p>
+                <p>${cardData[0].phone}</p>
+                <p>${cardData[0].email} | ${cardData[0].website}</p>
+            `;
+
+            container.appendChild(card);
+        }
+    }
+
+    // Generate visiting cards on page load
+    generateCards();
+</script>
+
+</body>
+</html>
