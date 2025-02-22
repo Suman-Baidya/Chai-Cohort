@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="cal-container">
+        <div class="all-inputs">
+            <div class="left">
+                <input type="text" id="indicator">
+                <div class="left-no">
+                    <input type="text" id="first-no">
+                    <input type="text" id="second-no">
+                </div>
+            </div>
+            <div class="right">
+                <input type="text" id="answer">
+            </div>
+        </div>
+        <div class="all-buttons">
+            <button onclick="getValue(7)" id="7"> 7 </button>
+            <button onclick="getValue(8)" id="8"> 8 </button>
+            <button onclick="getValue(9)" id="9"> 9 </button>
+            <button onclick="getIndicate('+')" id="plus"> + </button>
+            <button onclick="getValue(4)" id="4"> 4 </button>
+            <button onclick="getValue(5)" id="5"> 5 </button>
+            <button onclick="getValue(6)" id="6"> 6 </button>
+            <button onclick="getIndicate('-')" id="minus"> - </button>
+            <button onclick="getValue(1)" id="1"> 1 </button>
+            <button onclick="getValue(2)" id="2"> 2 </button>
+            <button onclick="getValue(3)" id="3"> 3 </button>
+            <button onclick="getIndicate('x')" id="multiply"> x </button>
+            <button onclick="getValue(0)" id="zero"> 0 </button>
+            <button onclick="allClear()" id="clear"> C </button>
+            <button onclick="getIndicate('/')" id="devide"> / </button>
+            <button onclick="result()" id="equal"> = </button>
+        </div>
+
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
